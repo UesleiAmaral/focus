@@ -1,7 +1,7 @@
 import { Elements } from '/module/Elements.js';
-import { Controls } from '/module/Controls.js';
-import { Cards } from '/module/Cards.js'
-
+import { Controls, Minutes } from '/module/Controls.js';
+import { Cards } from '/module/Cards.js';
+import { Countdown, TimerTimeout } from '/module/Timer.js';
 
 const {
   play,
@@ -11,7 +11,9 @@ const {
   timeUp,
   timeDown,
   soundOn,
-  soundOff
+  soundOff,
+  resetControls,
+  updateDisplay
 
 } = Controls({
 
@@ -48,15 +50,31 @@ const {
 
 });
 
+const {
+  countDown,
+  resetTimer
+
+} = Countdown({
+  minutesDisplay: Elements.minutesDisplay,
+  secondsDisplay: Elements.secondsDisplay,
+  resetControls,
+  updateDisplay,
+  Minutes,
+
+});
+
 Elements.buttonPlay.addEventListener('click', (event) => {
   event.preventDefault();
   play();
+  setting();
+  countDown();
 
 });
 
 Elements.buttonPause.addEventListener('click', (event) => {
   event.preventDefault();
   pause();
+  clearTimeout(TimerTimeout);
 
 });
 
@@ -68,8 +86,9 @@ Elements.buttonSetting.addEventListener('click', (event) => {
 
 Elements.buttonStop.addEventListener('click', (event) => {
   event.preventDefault();
-  stop();
-
+  resetControls();
+  resetTimer();
+  
 });
 
 Elements.buttonSoundOn.addEventListener('click', (event) => {

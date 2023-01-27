@@ -1,3 +1,5 @@
+export let Minutes;
+
 export const Controls = ({
   buttonPlay,
   buttonPause,
@@ -76,6 +78,22 @@ export const Controls = ({
 
   };
 
+  const resetControls = () => {
+    buttonPlay.classList.remove('hide');
+    buttonSetting.classList.remove('hide');
+
+    buttonPause.classList.add('hide');
+    buttonStop.classList.add('hide');
+
+  };
+
+  const updateDisplay = (minutes, seconds) => {
+    minutesDisplay.textContent = String(minutes).padStart(2, '0');
+    secondsDisplay.textContent = String(seconds).padStart(2, '0');
+
+
+  }
+
   return {
     play,
     pause,
@@ -84,7 +102,9 @@ export const Controls = ({
     timeUp,
     timeDown,
     soundOn,
-    soundOff
+    soundOff,
+    resetControls,
+    updateDisplay
 
   }
 }
