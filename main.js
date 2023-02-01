@@ -3,6 +3,10 @@ import { Controls, Minutes } from '/module/Controls.js';
 import { Cards } from '/module/Cards.js';
 import { Countdown, TimerTimeout } from '/module/Timer.js';
 
+import { Sound } from '/module/Sounds.js';
+
+const music = new Audio('/sounds/Floresta01.mp3');
+
 const {
   play,
   pause,
@@ -84,7 +88,7 @@ Elements.buttonPause.addEventListener('click', (event) => {
 Elements.buttonSetting.addEventListener('click', (event) => {
   event.preventDefault();
   setting();
-  
+
 
 });
 
@@ -92,7 +96,7 @@ Elements.buttonStop.addEventListener('click', (event) => {
   event.preventDefault();
   resetControls();
   resetTimer();
-  
+
 });
 
 Elements.buttonSoundOn.addEventListener('click', (event) => {
@@ -138,5 +142,3 @@ Elements.cardChuva.addEventListener('click', (event) => {
   bgCardChuva();
 
 });
-
-
