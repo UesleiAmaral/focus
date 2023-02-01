@@ -10,60 +10,77 @@ export const Controls = ({
   buttonSoundOn,
   buttonSoundOff,
   minutesDisplay,
-  secondsDisplay
+  secondsDisplay,
+  modalSetting,
+  modalMinutes,
+  modalButton
 
 }) => {
-  let minutes = Number(minutesDisplay.textContent);
-  let seconds = Number(secondsDisplay.textContent);
+
 
   const play = () => {
     buttonPause.classList.remove('hide');
     buttonPlay.classList.add('hide');
+
+    buttonTimeUp.disabled = true;
+    buttonTimeDown.disabled = true;
 
   };
 
   const pause = () => {
     buttonPlay.classList.remove('hide');
     buttonPause.classList.add('hide');
+    buttonTimeUp.disabled = false;
+    buttonTimeDown.disabled = false;
+
 
   };
 
   const stop = () => {
-    buttonSetting.classList.remove('hide');
-    buttonStop.classList.add('hide');
+    buttonSetting.classList.add('hide');
+    buttonStop.classList.remove('hide');
 
   };
 
   const setting = () => {
-    buttonStop.classList.remove('hide');
-    buttonSetting.classList.add('hide');
+    modalSetting.classList.remove('hide');
+
+    modalButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      minutesDisplay.textContent = String(modalMinutes.value).padStart(2, '0');
+      modalSetting.classList.add('hide');
+
+    })
+
+    modalMinutes.value = "";
+
   };
 
   const timeUp = () => {
+    let minutes = Number(minutesDisplay.textContent);
+    let seconds = Number(secondsDisplay.textContent);
     seconds += 5;
 
-    if (seconds > 55) {
-      seconds = 0;
+    if (seconds >= 60) {
+      seconds = seconds - 60;
       minutes += 1;
 
     };
-
-    minutesDisplay.innerHTML = minutes;
-    secondsDisplay.innerHTML = seconds;
+    updateDisplay(minutes, seconds);
 
   };
 
   const timeDown = () => {
+    let minutes = Number(minutesDisplay.textContent);
+    let seconds = Number(secondsDisplay.textContent);
     seconds -= 5;
 
     if (seconds < 0) {
-      seconds = 55;
+      seconds = seconds + 60;
       minutes -= 1;
 
     };
-
-    minutesDisplay.innerHTML = minutes;
-    secondsDisplay.innerHTML = seconds;
+    updateDisplay(minutes, seconds);
 
   };
 
@@ -84,6 +101,8 @@ export const Controls = ({
 
     buttonPause.classList.add('hide');
     buttonStop.classList.add('hide');
+    buttonTimeUp.disabled = false;
+    buttonTimeDown.disabled = false;
 
   };
 

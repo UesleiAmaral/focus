@@ -1,5 +1,4 @@
 export let TimerTimeout;
-
 export const Countdown = ({
   minutesDisplay,
   secondsDisplay,
@@ -39,7 +38,7 @@ export const Countdown = ({
   const resetTimer = () => {
 
     if (Minutes == undefined) {
-      updateDisplay(15, 0);
+      updateDisplay(0, 0);
 
     } else {
       updateDisplay(Minutes, 0);

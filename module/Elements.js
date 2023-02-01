@@ -17,5 +17,11 @@ export const Elements = {
   imageMar: document.querySelector('.image-mar'),
   cardChuva: document.querySelector('.card-chuva'),
   imageChuva: document.querySelector('.image-chuva'),
+  
+  modalSetting: document.querySelector('.modal-setting'),
+  
+  modalMinutes: document.querySelector('#minutes'),
+  modalButton: document.querySelector('.modal-button')
+  
 
 };

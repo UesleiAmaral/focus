@@ -27,6 +27,9 @@ const {
   buttonSoundOff: Elements.buttonSoundOff,
   minutesDisplay: Elements.minutesDisplay,
   secondsDisplay: Elements.secondsDisplay,
+  modalSetting: Elements.modalSetting,
+  modalMinutes: Elements.modalMinutes,
+  modalButton: Elements.modalButton
 
 });
 
@@ -66,7 +69,7 @@ const {
 Elements.buttonPlay.addEventListener('click', (event) => {
   event.preventDefault();
   play();
-  setting();
+  stop();
   countDown();
 
 });
@@ -81,6 +84,7 @@ Elements.buttonPause.addEventListener('click', (event) => {
 Elements.buttonSetting.addEventListener('click', (event) => {
   event.preventDefault();
   setting();
+  
 
 });
 
@@ -134,3 +138,5 @@ Elements.cardChuva.addEventListener('click', (event) => {
   bgCardChuva();
 
 });
+
+

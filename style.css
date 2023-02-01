@@ -22,6 +22,45 @@
   z-index: -1;
 }
 
+.modal-setting {
+  text-align: center;
+  margin: 0 auto;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: 20rem;
+  background-color: white;
+  justify-self: center;
+  align-self: center;
+  position: relative;
+  
+  
+}
+
+.modal input{
+  font-size: 3rem;
+  margin: 2rem auto;
+  width: 5rem;
+  height: 5rem;
+}
+
+.modal button{
+  padding: 0.5rem;
+  width: 10rem;
+  margin-top: 2rem;
+  
+}
+
 body {
   font-size: 62.5%;
   color: #98c789;
