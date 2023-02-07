@@ -52,6 +52,11 @@ Para usar Focus, siga estas etapas:
 ```
 <img src="https://i.ibb.co/DLpBtXj/Captura-da-Web-7-2-2023-2211-127-0-0-1.jpg" alt="exemplo imagem">
 
+```
+5. Dê o Play e desfrute.
+```
+<img src="https://i.ibb.co/G5mYmzL/play.jpg" alt="play">
+
 ## 📫 Contribuindo para Focus
 
 Para contribuir com Focus, siga estas etapas:
