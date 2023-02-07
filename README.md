@@ -46,7 +46,7 @@ Para usar Focus, siga estas etapas:
 
 <img src="#" alt="exemplo imagem">
 
-## 📫 Contribuindo para <nome_do_projeto>
+## 📫 Contribuindo para Focus
 
 Para contribuir com Focus, siga estas etapas:
 
