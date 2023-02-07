@@ -55,10 +55,17 @@ export const Controls = ({
 
     modalButton.addEventListener('click', (event) => {
       event.preventDefault();
-      minutesDisplay.textContent = String(modalMinutes.value).padStart(2, '0');
-      modalSetting.classList.add('hide');
 
-    })
+      if (Number(modalMinutes.value) > 60 || isNaN(Number(modalMinutes.value))) {
+        modalSetting.classList.add('hide');
+
+      } else {
+        minutesDisplay.textContent = String(modalMinutes.value).padStart(2, '0');
+        modalSetting.classList.add('hide');
+
+      };
+
+    });
 
     modalMinutes.value = "";
 
@@ -66,32 +73,25 @@ export const Controls = ({
 
   const timeUp = () => {
     let minutes = Number(minutesDisplay.textContent);
-    let seconds = Number(secondsDisplay.textContent);
-    seconds += 5;
+    minutes += 5;
 
-    if (seconds >= 60) {
-      seconds = seconds - 60;
-      minutes += 1;
+    if (minutes > 60) {
+      minutes -= 60;
 
     };
-    updateDisplay(minutes, seconds);
+    updateDisplay(minutes, 0);
 
   };
 
   const timeDown = () => {
     let minutes = Number(minutesDisplay.textContent);
-    let seconds = Number(secondsDisplay.textContent);
-    seconds -= 5;
+    minutes -= 5;
 
-    if (seconds < 0) {
-      seconds = seconds + 60;
-      if (minutes > 0) {
-        minutes -= 1;
-
-      };
+    if (minutes < 0) {
+      minutes += 65;
 
     };
-    updateDisplay(minutes, seconds);
+    updateDisplay(minutes, 0);
 
   };
 

@@ -38,26 +38,42 @@
   align-items: center;
   width: 20rem;
   height: 20rem;
-  background-color: white;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgb(255, 235, 193)100%);
+  ;
   justify-self: center;
   align-self: center;
   position: relative;
-  
-  
+
+  border-radius: 0.2rem;
+
+
 }
 
-.modal input{
+.modal h2 {
+  font-size: 2rem;
+  color: black;
+}
+
+.modal input {
   font-size: 3rem;
   margin: 2rem auto;
   width: 5rem;
   height: 5rem;
+  text-align: center;
 }
 
-.modal button{
+.modal span {
+  font-size: 1rem;
+  color: red;
+}
+
+.modal-button {
   padding: 0.5rem;
-  width: 10rem;
+  width: 5rem;
   margin-top: 2rem;
-  
+  border-radius: 0.2rem;
+  background: linear-gradient(90deg, rgba(4, 251, 166, 0.6) 0%, rgba(6, 194, 232, 0.4) 100%);
+
 }
 
 body {
@@ -66,8 +82,9 @@ body {
   display: grid;
 
 }
-.container{
-}
+
+.container {}
+
 .container,
 .cards {
   justify-self: center;
@@ -75,9 +92,7 @@ body {
 
 }
 
-span{
-  height: 9rem;
-}
+
 
 .timer {
   font-size: clamp(4rem, 7rem + 5vw, 8.8rem);
