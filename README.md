@@ -35,25 +35,25 @@ Para usar Focus, siga estas etapas:
 <img src="https://i.ibb.co/5htwcfM/setting.png" alt="exemplo imagem">
 
 ```
-2. Escolha a quantidade de tempo desejada, adcionando 5 seg ao tempo existente.
+2. Escolha o tempo desejado, adicionando 5 min ao tempo existente.
 ```
 
 <img src="https://i.ibb.co/g9vrYmV/timer.jpg" alt="exemplo imagem">
 
 
 ```
-3. Ou use o botão setting para escolher os minutos.
+3. Ou use o botão setting para escolher os minutos. **Máximo de 60 min.
 ```
 
 <img src="https://i.ibb.co/sJ1zGdr/setting.jpg" alt="exemplo imagem">
 
 ```
-4. Escolha o card com o tema de sua preferencia. Floresta, Noite, Mar e Chuva.
+4. Escolha o card com o tema da sua preferência. Floresta, Noite, Mar ou Chuva.
 ```
 <img src="https://i.ibb.co/DLpBtXj/Captura-da-Web-7-2-2023-2211-127-0-0-1.jpg" alt="exemplo imagem">
 
 ```
-5. Dê o Play e desfrute.
+5. Dê o Play e Relaxe.
 ```
 <img src="https://i.ibb.co/G5mYmzL/play.jpg" alt="play">
 
