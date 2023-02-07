@@ -1,3 +1,9 @@
+import { Add } from '/module/Add.js';
+import { Remove } from '/module/Remove.js';
+
+const { addHide, addSelect } = Add();
+const { removeHide, removeSelect } = Remove();
+
 export const Cards = ({
   cardFloresta,
   cardMar,
@@ -7,64 +13,52 @@ export const Cards = ({
   imageMar,
   imageChuva,
   imageNoite,
-  imageFloresta
+  imageFloresta,
+
+  soundFloresta,
+  soundNoite,
+  soundChuva,
+  soundMar
 
 }) => {
 
   const bgCardFloresta = () => {
+    addHide(imageNoite, imageMar, imageChuva);
+    removeHide(imageFloresta);
 
-    imageNoite.classList.add('hide');
-    imageMar.classList.add('hide');
-    imageChuva.classList.add('hide');
-    imageFloresta.classList.remove('hide');
-    cardFloresta.classList.add('select');
-    cardNoite.classList.remove('select');
-    cardMar.classList.remove('select');
-    cardChuva.classList.remove('select');
+    addSelect(cardFloresta);
+    removeSelect(cardNoite, cardMar, cardChuva);
+    soundFloresta();
 
   };
 
   const bgCardMar = () => {
+    addHide(imageFloresta, imageNoite, imageChuva);
+    removeHide(imageMar);
 
-    imageFloresta.classList.add('hide');
-    imageNoite.classList.add('hide');
-    imageChuva.classList.add('hide');
-
-    imageMar.classList.remove('hide');
-    cardMar.classList.add('select');
-
-    cardFloresta.classList.remove('select');
-    cardNoite.classList.remove('select');
-    cardChuva.classList.remove('select');
+    addSelect(cardMar);
+    removeSelect(cardFloresta, cardNoite, cardChuva);
+    soundMar();
 
   };
 
   const bgCardChuva = () => {
-    
-    imageFloresta.classList.add('hide');
-    imageMar.classList.add('hide');
-    imageNoite.classList.add('hide');
+    addHide(imageFloresta, imageMar, imageNoite);
+    removeHide(imageChuva);
 
-    imageChuva.classList.remove('hide');
-    cardChuva.classList.add('select');
+    addSelect(cardChuva);
+    removeSelect(cardFloresta, cardMar, cardNoite);
+    soundChuva();
 
-    cardFloresta.classList.remove('select');
-    cardMar.classList.remove('select');
-    cardNoite.classList.remove('select');
   };
 
   const bgCardNoite = () => {
+    addHide(imageFloresta, imageMar, imageChuva);
+    removeHide(imageNoite);
 
-    imageFloresta.classList.add('hide');
-    imageMar.classList.add('hide');
-    imageChuva.classList.add('hide');
-
-    imageNoite.classList.remove('hide');
-    cardNoite.classList.add('select');
-
-    cardFloresta.classList.remove('select');
-    cardMar.classList.remove('select');
-    cardChuva.classList.remove('select');
+    addSelect(cardNoite);
+    removeSelect(cardFloresta, cardMar, cardChuva);
+    soundNoite();
 
   };
 
@@ -73,7 +67,6 @@ export const Cards = ({
     bgCardMar,
     bgCardChuva,
     bgCardNoite,
-  }
+  };
 
-
-}
+};

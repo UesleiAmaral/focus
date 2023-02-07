@@ -1,3 +1,13 @@
+import { Sound } from '/module/Sounds.js';
+
+const {
+  soundFloresta,
+  soundNoite,
+  soundChuva,
+  soundMar,
+
+} = Sound();
+
 export let Minutes;
 
 export const Controls = ({
@@ -13,10 +23,9 @@ export const Controls = ({
   secondsDisplay,
   modalSetting,
   modalMinutes,
-  modalButton
+  modalButton,
 
 }) => {
-
 
   const play = () => {
     buttonPause.classList.remove('hide');
@@ -32,7 +41,6 @@ export const Controls = ({
     buttonPause.classList.add('hide');
     buttonTimeUp.disabled = false;
     buttonTimeDown.disabled = false;
-
 
   };
 
@@ -77,7 +85,10 @@ export const Controls = ({
 
     if (seconds < 0) {
       seconds = seconds + 60;
-      minutes -= 1;
+      if (minutes > 0) {
+        minutes -= 1;
+
+      };
 
     };
     updateDisplay(minutes, seconds);
@@ -87,6 +98,7 @@ export const Controls = ({
   const soundOn = () => {
     buttonSoundOff.classList.remove('hide');
     buttonSoundOn.classList.add('hide');
+
   };
 
   const soundOff = () => {
@@ -110,8 +122,7 @@ export const Controls = ({
     minutesDisplay.textContent = String(minutes).padStart(2, '0');
     secondsDisplay.textContent = String(seconds).padStart(2, '0');
 
-
-  }
+  };
 
   return {
     play,
@@ -125,5 +136,5 @@ export const Controls = ({
     resetControls,
     updateDisplay
 
-  }
-}
+  };
+};

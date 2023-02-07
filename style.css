@@ -8,12 +8,11 @@
 
 
 .backgrounds img {
-  resize: none;
   border-radius: 0;
   border: none;
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
+  object-fit: fill;
   position: fixed;
   left: 0;
   right: 0;
@@ -65,10 +64,10 @@ body {
   font-size: 62.5%;
   color: #98c789;
   display: grid;
-  height: 100vh;
 
 }
-
+.container{
+}
 .container,
 .cards {
   justify-self: center;
@@ -76,8 +75,12 @@ body {
 
 }
 
+span{
+  height: 9rem;
+}
+
 .timer {
-  font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+  font-size: clamp(4rem, 7rem + 5vw, 8.8rem);
   font-family: 'Chicle', cursive;
   background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(253, 187, 45, 1)100%);
   -webkit-background-clip: text;
@@ -100,8 +103,8 @@ button {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  width: clamp(10rem, 10rem + 60vw, 30rem);
-  padding: 1rem;
+  width: clamp(10rem, 10rem + 50vw, 30rem);
+  padding: 0 0 1rem 0;
   opacity: 1;
   border-radius: 9999px;
 
@@ -112,19 +115,19 @@ button {
 }
 
 img {
-  width: clamp(2.2rem, 2rem + 12vw, 4rem);
+  width: clamp(2rem, 4rem + 5vw, 4rem);
   border: 2px solid white;
   border-radius: 9999px;
 }
 
 .cards {
-  width: clamp(10rem, 10rem + 60vw, 30rem);
-  margin: 1.5rem 0 1.5rem 0;
+  width: clamp(23rem, 15rem + 20vw, 30rem);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
+  margin: 0 auto;
 
 }
 
@@ -132,6 +135,7 @@ img {
   display: flex;
   justify-content: center;
   width: 40%;
+  height: 11.5rem;
   padding: 4rem;
   background: linear-gradient(90deg, rgba(4, 251, 166, 0.6) 0%, rgba(6, 194, 232, 0.4) 100%);
 
